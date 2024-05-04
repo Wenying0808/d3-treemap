@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap:20px;
     align-items: center;
     background-color: black;
     font-family: sans-serif;
@@ -11,6 +12,7 @@ body{
 #title{
     color:white;
     font-size: 48px;
+    margin:0;
 }
 
 #description{
@@ -49,10 +51,15 @@ body{
     color: rgb(0, 242, 255);
 }
 
+.canvas-legend{
+    display: flex;
+    flex-direction: row;
+}
 
 #canvas{
-    width: 1000px;
-    height: 600px;
+    min-width: 1000px;
+    min-height: 600px;
+    margin: 20px;
 }
 
 #tooltip{
