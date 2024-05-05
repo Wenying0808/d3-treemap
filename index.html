@@ -9,18 +9,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.5.1/topojson.min.js"></script>
 </head>
 <body>
-    <div id="navigation">
-        <a href="index.html">Movies Set</a>
-        <a href="video games.html">Video Game Set</a>
-        <a href="kickstarter.html">Kickstarter Set</a>
+    <div id="dataSelect">
+        <label><input type="radio" name="dataset" value="movies"> Movies</label>
+        <label><input type="radio" name="dataset" value="videogames"> Video Games</label>
+        <label><input type="radio" name="dataset" value="kickstarter"> Kickstarter</label>
     </div>
-    <h1 id="title">Movie Sales</h1>
-    <div id="description">Top 100 Highest Grossing Movies Grouped By Genre</div>
-    <div class="canvas-legend">
+    <h1 id="title"></h1>
+    <div id="description"></div>
+    <div id="canvas-legend">
         <svg id="canvas"></svg>
         <svg id="legend"></svg>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
