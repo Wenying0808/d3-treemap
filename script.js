@@ -202,7 +202,7 @@ function drawLegend(categoryColorData){
     let legendPadding = 24;
     let legendGap = 12;
 
-    legend.attr("width", 150 )
+    legend.attr("width", 210 )
             .attr("height", legendHeight * categoryColorData.length + legendPadding * 2 + legendGap *(categoryColorData.length-1) )
 
     let legendGroup = legend.selectAll('g')
