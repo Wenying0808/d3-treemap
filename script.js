@@ -17,6 +17,8 @@ let description = d3.select('#description');
 let canvasAndLegend = d3.select("#canvas-legend");
 let canvas = d3.select('#canvas');
 let legend = d3.select('#legend');
+let tooltip = d3.select('body').append("div");
+tooltip.attr("id", "tooltip");
 
 const catecoryColor = {
     movies: [
@@ -185,6 +187,31 @@ function drawTreeMap (data, categoryColorData) {
                 return item['y1'] - item['y0'];
             })
 
+             //tooltip
+            .on("mouseover", function(event, item){
+
+                const category = d3.select(this).attr('data-category');
+                const name = d3.select(this).attr('data-name');
+                const value = d3.select(this).attr('data-value');
+
+                var mouseX = event.pageX;
+                var mouseY = event.pageY;
+
+                tooltip.transition()
+                .style("visibility", "visible")
+                .delay(200)
+                .style("left", (mouseX - 120) + "px")
+                .style("top", (mouseY - 120) + "px")
+ 
+                //content
+                tooltip.html("Category: " + category + "<br>" + "Name: " + name + "</br>" + "Value: " + value)
+            })
+            .on("mouseout", function(){
+                tooltip.transition()
+                .delay(200)
+                .style("visibility", "hidden")
+             })
+
     block.append('text')
     .text((item) => {
         return item['data']['name']
@@ -192,6 +219,8 @@ function drawTreeMap (data, categoryColorData) {
     .attr('x', 8)
     .attr('y', 20)
     .style('font-size', '11px');
+
+   
     
 };
 
